@@ -8,8 +8,6 @@
 | 4   | Add new student | Add new student                                   |
 | 5   | Edit a student  | Update student info                               |
 
----
-
 ## LOGIN
 
 - Fake login (click and store token into local storage)
@@ -55,35 +53,33 @@ A button to go to Add new student page.
 
 **Student form:**
 
-- <span style="color:orange">Name</span>
+- Name
 
   - Text Input
   - Should have at least 2 words
   - Required
 
-- <span style="color:orange">Gender</span>
+- Gender
 
   - Radio options: Male, Female
   - Required
 
-- <span style="color:orange">Age</span>
+- Age
 
   - Number Input
   - Min is 18, Max is 60
   - Optional
 
-- <span style="color:orange">City</span>
+- City
 
   - Select (list loaded from API)
   - Required
 
-- <span style="color:orange">Mark</span>
+- Mark
 
   - Number Input
   - Optional
   - Min is 0, Max is 10
-
----
 
 ## PLAN
 
@@ -95,17 +91,15 @@ A button to go to Add new student page.
 
 **Routings:**
 
-- <span style="color:orange">/login</span>: Login page
-- <span style="color:orange">/admin</span>: Master layout for admin page
-- <span style="color:orange">/admin/dashboard</span>: Dashboard
-- <span style="color:orange">/admin/students</span>: Search students
-- <span style="color:orange">/admin/sutdents/add</span>: Add new student
-- <span style="color:orange">/admin/students/:studentId</span>: Update student info
+- **/login**: Login page
+- **/admin**: Master layout for admin page
+- **/admin/dashboard**: Dashboard
+- **/admin/students**: Search students
+- **/admin/sutdents/add**: Add new student
+- **/admin/students/:studentId**: Update student info
 
 **Form control:**
 
 - InputField
 - SelectField
 - RadioGroupField
-
----
