@@ -1,7 +1,5 @@
 # Feature: Sutdent Management
 
----
-
 | #   | Page            | Description                                       |
 | --- | --------------- | ------------------------------------------------- |
 | 1   | Login           | Fake login page                                   |
