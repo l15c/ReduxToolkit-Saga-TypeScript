@@ -6,10 +6,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  // useEffect(() => {
-  //   cityApi.getAll().then((res) => console.log(res));
-  // });
-
   return (
     <Routes>
       <Route path='/' element={<Navigate replace to='/login' />} />
