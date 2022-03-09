@@ -1,11 +1,12 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { call, delay, fork, put, take } from 'redux-saga/effects';
+import { history } from 'utils';
 import { authActions, LoginPayload } from './authSlice';
 
 function* handleLogin(payload: LoginPayload) {
   try {
     yield delay(1000);
-
+    console.log('Login');
     localStorage.setItem('access_token', 'fake_token');
     yield put(
       authActions.loginSuccess({
@@ -13,6 +14,7 @@ function* handleLogin(payload: LoginPayload) {
         name: 'L15C',
       })
     );
+    history.push('/admin');
   } catch (error) {
     yield put(authActions.loginFailed('Error'));
   }
