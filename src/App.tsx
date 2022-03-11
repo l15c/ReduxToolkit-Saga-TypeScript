@@ -12,7 +12,7 @@ function App() {
       <Route path='/login' element={<LoginPage />} />
       //Setup PrivateRoute syntax
       <Route
-        path='/admin'
+        path='/admin/*'
         element={
           <PrivateRoute redirectTo='/login'>
             <AdminLayout />

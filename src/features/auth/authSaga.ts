@@ -13,7 +13,7 @@ function* handleLogin(payload: LoginPayload) {
         name: 'L15C',
       })
     );
-    history.push('/admin');
+    history.push('/admin/dashboard');
   } catch (error) {
     yield put(authActions.loginFailed('Error'));
   }
