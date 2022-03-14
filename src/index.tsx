@@ -1,5 +1,6 @@
 import { CssBaseline } from '@mui/material';
 import { NavigateSetter } from 'components/Common';
+import { ColorModeContextProvider } from 'context/ColorModeContext';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -15,9 +16,11 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <NavigateSetter />
-        <CssBaseline />
-        <App />
+        <ColorModeContextProvider>
+          <NavigateSetter />
+          <CssBaseline />
+          <App />
+        </ColorModeContextProvider>
       </BrowserRouter>
       <ToastContainer
         position='top-right'

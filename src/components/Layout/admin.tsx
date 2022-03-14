@@ -23,11 +23,11 @@ const useStyles = makeStyles({
   sidebar: {
     gridArea: 'sidebar',
     borderRight: `1px solid ${theme.palette.divider}`,
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
   },
   main: {
     gridArea: 'main',
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2, 3),
   },
 });

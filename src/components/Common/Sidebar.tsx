@@ -7,29 +7,28 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { makeStyles } from '@mui/styles';
+import { ColorModeContext } from 'context/ColorModeContext';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const theme = createTheme();
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    maxWidth: 240,
-    backgroundColor: theme.palette.background.paper,
-  },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
 
-    '&.active > li > div': {
-      backgroundColor: theme.palette.action.selected,
-    },
-  },
-});
 export function Sidebar() {
+  const { mode } = React.useContext(ColorModeContext);
+  const useStyles = makeStyles({
+    link: {
+      color: 'inherit',
+      textDecoration: 'none',
+
+      '&.active > li > div': {
+        backgroundColor:
+          mode === 'light' ? theme.palette.action.selected : 'rgba(238, 238, 238,0.3)',
+      },
+    },
+  });
   const classes = useStyles();
   return (
-    <Box className={classes.root}>
+    <Box sx={{ width: '100%', maxWidth: 240 }}>
       <nav aria-label='main mailbox folders'>
         <List>
           <NavLink to='dashboard' className={classes.link}>

@@ -1,14 +1,16 @@
 import { ChevronLeft } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import studentApi from 'api/studentApi';
+import { ColorModeContext } from 'context/ColorModeContext';
 import { Student } from 'models';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { history } from 'utils';
 import StudentForm from '../components/StudentForm';
 
 export default function AddEditPage() {
+  const { mode } = useContext(ColorModeContext);
   const { studentId } = useParams<{ studentId: string }>();
   const isEdit = Boolean(studentId);
 
@@ -48,13 +50,13 @@ export default function AddEditPage() {
     city: '',
     ...student,
   } as Student;
-
+  const test = mode === 'dark' ? { color: '#fff' } : {};
   return (
     <Box>
       <Link to='/admin/students'>
         <Typography variant='caption' style={{ display: 'flex', alignItems: 'center' }}>
-          <ChevronLeft />
-          Back to student list
+          <ChevronLeft sx={test} />
+          <Box sx={test}> Back to student list</Box>
         </Typography>
       </Link>
       <Typography variant='h5'>{isEdit ? 'Update student info' : 'Add new student'}</Typography>
