@@ -15,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename='/ReduxToolkit-Saga-TypeScript'>
         <ColorModeContextProvider>
           <NavigateSetter />
           <CssBaseline />

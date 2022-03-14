@@ -2,6 +2,7 @@
   "name": "student-management",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://l15c.github.io/ReduxToolkit-Saga-TypeScript",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -20,6 +21,7 @@
     "@types/react-redux": "^7.1.23",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.26.0",
+    "gh-pages": "^3.2.3",
     "install": "^0.13.0",
     "npm": "^8.5.3",
     "react": "^17.0.2",
@@ -37,7 +39,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
