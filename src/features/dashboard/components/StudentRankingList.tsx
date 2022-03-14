@@ -13,12 +13,14 @@ export interface StudentRankingListProps {
 
 export default function StudentRankingList({ studentList }: StudentRankingListProps) {
   return (
-    <TableContainer
-      sx={{
-        borderCollapse: 'none',
-      }}
-    >
-      <Table size='small' aria-label='simple table'>
+    <TableContainer>
+      <Table
+        size='small'
+        aria-label='simple table'
+        sx={{
+          borderCollapse: 'unset',
+        }}
+      >
         <TableHead>
           <TableRow>
             <TableCell align='center'>#</TableCell>

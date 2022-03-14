@@ -37,5 +37,5 @@ Content-Type: application/json
 ###
 
 # @name removeStudent
-DELETE {{baseUrl}}/students/TlcW9A-
+DELETE {{baseUrl}}/students/11771.5049162282792
 

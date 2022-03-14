@@ -1,9 +1,10 @@
-import { Box, Button, CircularProgress, Paper, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, createTheme, Paper, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import * as React from 'react';
 import { authActions } from '../authSlice';
 
+const theme = createTheme();
 const useStyles = makeStyles({
   root: {
     display: 'flex',
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
   },
 
   box: {
-    padding: '18px',
+    padding: theme.spacing(2),
   },
 });
 

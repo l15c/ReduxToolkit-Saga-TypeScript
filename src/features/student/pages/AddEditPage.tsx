@@ -1,5 +1,69 @@
-import * as React from 'react';
+import { ChevronLeft } from '@mui/icons-material';
+import { Box, Typography } from '@mui/material';
+import studentApi from 'api/studentApi';
+import { Student } from 'models';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { history } from 'utils';
+import StudentForm from '../components/StudentForm';
 
 export default function AddEditPage() {
-  return <div>Add Edit Student Page</div>;
+  const { studentId } = useParams<{ studentId: string }>();
+  const isEdit = Boolean(studentId);
+
+  const [student, setStudent] = useState<Student>();
+
+  useEffect(() => {
+    if (!studentId) return;
+
+    (async () => {
+      try {
+        const data: Student = await studentApi.getById(studentId);
+        setStudent(data);
+      } catch (error) {
+        console.log('Failed to fetch student details', error);
+      }
+    })();
+  }, [studentId]);
+
+  const handleStudentFormSubmit = async (formValues: Student) => {
+    if (isEdit) {
+      await studentApi.update(formValues);
+    } else {
+      await studentApi.add(formValues);
+    }
+    const message = isEdit;
+    // toast.success(message ? 'Update student successfully!' : 'Add student successfully!');
+    toast.success('Save student successfully!');
+    // throw new Error('My testing error!!!')
+    history.push('/admin/students');
+  };
+
+  const initialValues: Student = {
+    name: '',
+    age: '',
+    mark: '',
+    gender: 'male',
+    city: '',
+    ...student,
+  } as Student;
+
+  return (
+    <Box>
+      <Link to='/admin/students'>
+        <Typography variant='caption' style={{ display: 'flex', alignItems: 'center' }}>
+          <ChevronLeft />
+          Back to student list
+        </Typography>
+      </Link>
+      <Typography variant='h5'>{isEdit ? 'Update student info' : 'Add new student'}</Typography>
+
+      {(!isEdit || Boolean(student)) && (
+        <Box mt={3}>
+          <StudentForm initialValues={initialValues} onSubmit={handleStudentFormSubmit} />
+        </Box>
+      )}
+    </Box>
+  );
 }

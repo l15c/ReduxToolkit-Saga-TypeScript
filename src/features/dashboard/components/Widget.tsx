@@ -1,6 +1,7 @@
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, createTheme, Paper, Typography } from '@mui/material';
 import * as React from 'react';
 
+const theme = createTheme();
 export interface WidgetProps {
   title: string;
   children: any;
@@ -10,8 +11,8 @@ export default function Widget({ title, children }: WidgetProps) {
   return (
     <Paper
       sx={{
-        padding: '16px',
-        border: '1px solid rgba(0,0,0,.08)',
+        p: theme.spacing(2),
+        border: `1px solid ${theme.palette.divider}`,
       }}
     >
       <Typography variant='button'>{title}</Typography>

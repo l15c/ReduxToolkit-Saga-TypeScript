@@ -3,10 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 import authReducer from 'features/auth/authSlice';
 import dashboardReducer from 'features/dashboard/dashboardSlice';
+import studentReducer from 'features/student/studentSlice';
+import cityReducer from 'features/city/citySlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   dashboard: dashboardReducer,
+  student: studentReducer,
+  city: cityReducer,
 });
 const sagaMiddleware = createSagaMiddleware();
 

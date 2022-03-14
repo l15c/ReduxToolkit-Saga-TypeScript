@@ -1,6 +1,8 @@
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, createTheme, Paper, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import * as React from 'react';
+
+const theme = createTheme();
 
 const useStyles = makeStyles({
   root: {
@@ -9,8 +11,8 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
 
-    padding: '16px',
-    border: '1px solid rgba(0,0,0,.08)',
+    padding: theme.spacing(2),
+    border: `1px solid ${theme.palette.divider}`,
   },
 });
 

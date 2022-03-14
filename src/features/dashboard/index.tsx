@@ -27,7 +27,7 @@ export default function Dashboard() {
   }, [dispatch]);
 
   return (
-    <Box sx={{ position: 'relative', paddingTop: '8px' }}>
+    <Box sx={{ position: 'relative', pt: '8px' }}>
       {/* Loading */}
       {loading && <LinearProgress sx={{ position: 'absolute', top: '-4px', width: '100%' }} />}
 

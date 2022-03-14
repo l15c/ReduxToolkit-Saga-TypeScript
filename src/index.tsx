@@ -4,6 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import App from './App';
 import { store } from './app/store';
 import './index.css';
@@ -17,6 +19,18 @@ ReactDOM.render(
         <CssBaseline />
         <App />
       </BrowserRouter>
+      <ToastContainer
+        position='top-right'
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+      />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
