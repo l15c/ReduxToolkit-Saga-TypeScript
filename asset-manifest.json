@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ReduxToolkit-Saga-TypeScript/static/css/main.e63409a9.css",
-    "main.js": "/ReduxToolkit-Saga-TypeScript/static/js/main.ce7ba937.js",
+    "main.js": "/ReduxToolkit-Saga-TypeScript/static/js/main.87c7a646.js",
     "index.html": "/ReduxToolkit-Saga-TypeScript/index.html",
     "main.e63409a9.css.map": "/ReduxToolkit-Saga-TypeScript/static/css/main.e63409a9.css.map",
-    "main.ce7ba937.js.map": "/ReduxToolkit-Saga-TypeScript/static/js/main.ce7ba937.js.map"
+    "main.87c7a646.js.map": "/ReduxToolkit-Saga-TypeScript/static/js/main.87c7a646.js.map"
   },
   "entrypoints": [
     "static/css/main.e63409a9.css",
-    "static/js/main.ce7ba937.js"
+    "static/js/main.87c7a646.js"
   ]
 }
